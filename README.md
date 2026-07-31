@@ -15,6 +15,7 @@ Evidenciar un flujo de trabajo con ramas `main`, `dev`, `qa`, cinco ramas
 - Vite
 - CSS
 - LocalStorage
+- Lucide React
 
 ## Instalacion
 
@@ -34,7 +35,7 @@ npm run dev
 npm run build
 ```
 
-## Funcionalidades CRUD planificadas
+## Funcionalidades CRUD
 
 - Crear productos con validaciones.
 - Consultar y listar productos.
@@ -47,10 +48,13 @@ npm run build
 
 ```text
 src/
+  components/
+    ProductForm.tsx
   types/
     product.ts
   utils/
     productStorage.ts
+    productValidation.ts
   App.tsx
   App.css
   index.css

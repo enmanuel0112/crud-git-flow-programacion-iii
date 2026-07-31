@@ -16,3 +16,5 @@ export type ProductFormData = {
   quantity: string
   description: string
 }
+
+export type ProductFormErrors = Partial<Record<keyof ProductFormData, string>>
