@@ -12,6 +12,7 @@ function App() {
   const [statusMessage, setStatusMessage] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('')
+  const [editingProductId, setEditingProductId] = useState<string | null>(null)
 
   useEffect(() => {
     writeProducts(products)
@@ -38,6 +39,12 @@ function App() {
     })
   }, [products, searchTerm, selectedCategory])
 
+  const editingProduct = useMemo(() => {
+    return (
+      products.find((product) => product.id === editingProductId) ?? null
+    )
+  }, [editingProductId, products])
+
   function handleCreateProduct(formData: ProductFormData) {
     const now = new Date().toISOString()
     const newProduct: Product = {
@@ -53,6 +60,39 @@ function App() {
 
     setProducts((currentProducts) => [newProduct, ...currentProducts])
     setStatusMessage(`Producto "${newProduct.name}" creado correctamente.`)
+  }
+
+  function handleUpdateProduct(formData: ProductFormData) {
+    if (!editingProduct) {
+      return
+    }
+
+    const updatedProduct: Product = {
+      ...editingProduct,
+      name: formData.name.trim(),
+      category: formData.category.trim(),
+      price: Number(formData.price),
+      quantity: Number(formData.quantity),
+      description: formData.description.trim(),
+      updatedAt: new Date().toISOString(),
+    }
+
+    setProducts((currentProducts) =>
+      currentProducts.map((product) =>
+        product.id === updatedProduct.id ? updatedProduct : product,
+      ),
+    )
+    setEditingProductId(null)
+    setStatusMessage(`Producto "${updatedProduct.name}" actualizado correctamente.`)
+  }
+
+  function handleSubmitProduct(formData: ProductFormData) {
+    if (editingProduct) {
+      handleUpdateProduct(formData)
+      return
+    }
+
+    handleCreateProduct(formData)
   }
 
   return (
@@ -80,8 +120,14 @@ function App() {
       )}
 
       <section className="workspace-panel" aria-labelledby="product-form-title">
-        <h2 id="product-form-title">Registro de productos</h2>
-        <ProductForm onCreateProduct={handleCreateProduct} />
+        <h2 id="product-form-title">
+          {editingProduct ? 'Editar producto' : 'Registro de productos'}
+        </h2>
+        <ProductForm
+          editingProduct={editingProduct}
+          onSubmitProduct={handleSubmitProduct}
+          onCancelEdit={() => setEditingProductId(null)}
+        />
       </section>
 
       <section className="workspace-panel" aria-labelledby="product-list-title">
@@ -103,6 +149,7 @@ function App() {
         <ProductTable
           products={filteredProducts}
           totalProducts={products.length}
+          onEditProduct={setEditingProductId}
         />
       </section>
     </main>

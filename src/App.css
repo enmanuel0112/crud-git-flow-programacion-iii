@@ -100,6 +100,19 @@ h2 {
   margin-top: 18px;
 }
 
+.edit-banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  background: #f0f9ff;
+  color: #075985;
+  padding: 12px 14px;
+  font-weight: 700;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -160,6 +173,30 @@ input[aria-invalid='true'] {
 
 .primary-action:hover {
   background: #115e59;
+}
+
+.ghost-action,
+.icon-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #344256;
+  padding: 9px 12px;
+  font-weight: 700;
+}
+
+.ghost-action:hover,
+.icon-action:hover {
+  border-color: #0f766e;
+  color: #0f766e;
+}
+
+.icon-action {
+  white-space: nowrap;
 }
 
 .section-heading {
@@ -284,5 +321,10 @@ tbody tr:last-child td {
 
   .filters-panel {
     grid-template-columns: 1fr;
+  }
+
+  .edit-banner {
+    align-items: stretch;
+    flex-direction: column;
   }
 }
