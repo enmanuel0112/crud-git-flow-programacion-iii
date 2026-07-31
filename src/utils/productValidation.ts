@@ -1,4 +1,4 @@
-import type { ProductFormData, ProductFormErrors } from '../types/product'
+import type { Product, ProductFormData, ProductFormErrors } from '../types/product'
 
 export function getEmptyProductForm(): ProductFormData {
   return {
@@ -7,6 +7,16 @@ export function getEmptyProductForm(): ProductFormData {
     price: '',
     quantity: '0',
     description: '',
+  }
+}
+
+export function productToFormData(product: Product): ProductFormData {
+  return {
+    name: product.name,
+    category: product.category,
+    price: String(product.price),
+    quantity: String(product.quantity),
+    description: product.description,
   }
 }
 

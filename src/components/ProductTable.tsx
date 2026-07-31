@@ -1,12 +1,18 @@
+import { Pencil } from 'lucide-react'
 import type { Product } from '../types/product'
 import { formatCurrency, formatDate } from '../utils/formatters'
 
 type ProductTableProps = {
   products: Product[]
   totalProducts: number
+  onEditProduct: (productId: string) => void
 }
 
-function ProductTable({ products, totalProducts }: ProductTableProps) {
+function ProductTable({
+  products,
+  totalProducts,
+  onEditProduct,
+}: ProductTableProps) {
   if (totalProducts === 0) {
     return (
       <div className="empty-state">
@@ -36,6 +42,7 @@ function ProductTable({ products, totalProducts }: ProductTableProps) {
             <th>Cantidad</th>
             <th>Creado</th>
             <th>Actualizado</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -50,6 +57,18 @@ function ProductTable({ products, totalProducts }: ProductTableProps) {
               <td>{product.quantity}</td>
               <td>{formatDate(product.createdAt)}</td>
               <td>{formatDate(product.updatedAt)}</td>
+              <td>
+                <button
+                  type="button"
+                  className="icon-action"
+                  onClick={() => onEditProduct(product.id)}
+                  aria-label={`Editar ${product.name}`}
+                  title="Editar producto"
+                >
+                  <Pencil size={17} aria-hidden="true" />
+                  Editar
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>

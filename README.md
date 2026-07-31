@@ -40,7 +40,7 @@ npm run build
 - Crear productos con validaciones.
 - Consultar y listar productos.
 - Buscar por nombre o categoria.
-- Editar productos existentes.
+- Editar productos existentes y actualizar la fecha de modificacion.
 - Eliminar productos con confirmacion.
 - Mantener los datos mediante LocalStorage.
 
