@@ -49,10 +49,13 @@ npm run build
 ```text
 src/
   components/
+    ProductFilters.tsx
+    ProductTable.tsx
     ProductForm.tsx
   types/
     product.ts
   utils/
+    formatters.ts
     productStorage.ts
     productValidation.ts
   App.tsx
