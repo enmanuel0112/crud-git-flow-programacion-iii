@@ -95,6 +95,33 @@ function App() {
     handleCreateProduct(formData)
   }
 
+  function handleDeleteProduct(productId: string) {
+    const productToDelete = products.find((product) => product.id === productId)
+
+    if (!productToDelete) {
+      setStatusMessage('No se encontro el producto seleccionado.')
+      return
+    }
+
+    const confirmed = window.confirm(
+      `Deseas eliminar el producto "${productToDelete.name}"?`,
+    )
+
+    if (!confirmed) {
+      return
+    }
+
+    setProducts((currentProducts) =>
+      currentProducts.filter((product) => product.id !== productId),
+    )
+
+    if (editingProductId === productId) {
+      setEditingProductId(null)
+    }
+
+    setStatusMessage(`Producto "${productToDelete.name}" eliminado correctamente.`)
+  }
+
   return (
     <main className="app-shell">
       <header className="app-header">
@@ -150,6 +177,7 @@ function App() {
           products={filteredProducts}
           totalProducts={products.length}
           onEditProduct={setEditingProductId}
+          onDeleteProduct={handleDeleteProduct}
         />
       </section>
     </main>
