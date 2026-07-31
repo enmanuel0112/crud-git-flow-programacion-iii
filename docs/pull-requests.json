@@ -1,0 +1,152 @@
+﻿[
+    {
+        "baseRefName":  "dev",
+        "createdAt":  "2026-07-31T13:14:24Z",
+        "headRefName":  "feature/project-foundation",
+        "mergedAt":  "2026-07-31T13:14:41Z",
+        "number":  1,
+        "state":  "MERGED",
+        "title":  "chore: initialize React TypeScript project",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/1"
+    },
+    {
+        "baseRefName":  "qa",
+        "createdAt":  "2026-07-31T13:14:26Z",
+        "headRefName":  "feature/project-foundation",
+        "mergedAt":  "2026-07-31T13:14:44Z",
+        "number":  2,
+        "state":  "MERGED",
+        "title":  "chore: initialize foundation for QA",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/2"
+    },
+    {
+        "baseRefName":  "main",
+        "createdAt":  "2026-07-31T13:14:28Z",
+        "headRefName":  "feature/project-foundation",
+        "mergedAt":  "2026-07-31T13:14:48Z",
+        "number":  3,
+        "state":  "MERGED",
+        "title":  "chore: initialize production foundation",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/3"
+    },
+    {
+        "baseRefName":  "dev",
+        "createdAt":  "2026-07-31T13:17:58Z",
+        "headRefName":  "feature/create-products",
+        "mergedAt":  "2026-07-31T13:18:10Z",
+        "number":  4,
+        "state":  "MERGED",
+        "title":  "feat: implement product creation form",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/4"
+    },
+    {
+        "baseRefName":  "qa",
+        "createdAt":  "2026-07-31T13:18:00Z",
+        "headRefName":  "feature/create-products",
+        "mergedAt":  "2026-07-31T13:18:13Z",
+        "number":  5,
+        "state":  "MERGED",
+        "title":  "feat: validate product creation in QA",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/5"
+    },
+    {
+        "baseRefName":  "main",
+        "createdAt":  "2026-07-31T13:18:02Z",
+        "headRefName":  "feature/create-products",
+        "mergedAt":  "2026-07-31T13:18:15Z",
+        "number":  6,
+        "state":  "MERGED",
+        "title":  "feat: release product creation",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/6"
+    },
+    {
+        "baseRefName":  "dev",
+        "createdAt":  "2026-07-31T13:19:47Z",
+        "headRefName":  "feature/list-and-search-products",
+        "mergedAt":  "2026-07-31T13:20:00Z",
+        "number":  7,
+        "state":  "MERGED",
+        "title":  "feat: add product listing and search",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/7"
+    },
+    {
+        "baseRefName":  "qa",
+        "createdAt":  "2026-07-31T13:19:49Z",
+        "headRefName":  "feature/list-and-search-products",
+        "mergedAt":  "2026-07-31T13:20:03Z",
+        "number":  8,
+        "state":  "MERGED",
+        "title":  "feat: validate listing and search in QA",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/8"
+    },
+    {
+        "baseRefName":  "main",
+        "createdAt":  "2026-07-31T13:19:52Z",
+        "headRefName":  "feature/list-and-search-products",
+        "mergedAt":  "2026-07-31T13:20:06Z",
+        "number":  9,
+        "state":  "MERGED",
+        "title":  "feat: release product listing and search",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/9"
+    },
+    {
+        "baseRefName":  "dev",
+        "createdAt":  "2026-07-31T13:21:35Z",
+        "headRefName":  "feature/update-products",
+        "mergedAt":  "2026-07-31T13:21:48Z",
+        "number":  10,
+        "state":  "MERGED",
+        "title":  "feat: implement product editing",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/10"
+    },
+    {
+        "baseRefName":  "qa",
+        "createdAt":  "2026-07-31T13:21:38Z",
+        "headRefName":  "feature/update-products",
+        "mergedAt":  "2026-07-31T13:21:51Z",
+        "number":  11,
+        "state":  "MERGED",
+        "title":  "feat: validate product editing in QA",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/11"
+    },
+    {
+        "baseRefName":  "main",
+        "createdAt":  "2026-07-31T13:21:41Z",
+        "headRefName":  "feature/update-products",
+        "mergedAt":  "2026-07-31T13:21:53Z",
+        "number":  12,
+        "state":  "MERGED",
+        "title":  "feat: release product editing",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/12"
+    },
+    {
+        "baseRefName":  "dev",
+        "createdAt":  "2026-07-31T13:22:57Z",
+        "headRefName":  "feature/delete-products",
+        "mergedAt":  "2026-07-31T13:23:09Z",
+        "number":  13,
+        "state":  "MERGED",
+        "title":  "feat: add product deletion confirmation",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/13"
+    },
+    {
+        "baseRefName":  "qa",
+        "createdAt":  "2026-07-31T13:22:59Z",
+        "headRefName":  "feature/delete-products",
+        "mergedAt":  "2026-07-31T13:23:12Z",
+        "number":  14,
+        "state":  "MERGED",
+        "title":  "feat: validate product deletion in QA",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/14"
+    },
+    {
+        "baseRefName":  "main",
+        "createdAt":  "2026-07-31T13:23:01Z",
+        "headRefName":  "feature/delete-products",
+        "mergedAt":  "2026-07-31T13:23:14Z",
+        "number":  15,
+        "state":  "MERGED",
+        "title":  "feat: release product deletion",
+        "url":  "https://github.com/enmanuel0112/crud-git-flow-programacion-iii/pull/15"
+    }
+]
