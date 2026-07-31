@@ -199,6 +199,22 @@ input[aria-invalid='true'] {
   white-space: nowrap;
 }
 
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.danger-action {
+  border-color: #fecdd3;
+  color: #be123c;
+}
+
+.danger-action:hover {
+  border-color: #be123c;
+  color: #9f1239;
+}
+
 .section-heading {
   display: flex;
   justify-content: space-between;

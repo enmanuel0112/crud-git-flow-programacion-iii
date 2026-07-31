@@ -41,7 +41,7 @@ npm run build
 - Consultar y listar productos.
 - Buscar por nombre o categoria.
 - Editar productos existentes y actualizar la fecha de modificacion.
-- Eliminar productos con confirmacion.
+- Eliminar productos con confirmacion previa y actualizacion inmediata.
 - Mantener los datos mediante LocalStorage.
 
 ## Estructura del proyecto
