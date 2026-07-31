@@ -1,4 +1,4 @@
-import { Pencil } from 'lucide-react'
+import { Pencil, Trash2 } from 'lucide-react'
 import type { Product } from '../types/product'
 import { formatCurrency, formatDate } from '../utils/formatters'
 
@@ -6,12 +6,14 @@ type ProductTableProps = {
   products: Product[]
   totalProducts: number
   onEditProduct: (productId: string) => void
+  onDeleteProduct: (productId: string) => void
 }
 
 function ProductTable({
   products,
   totalProducts,
   onEditProduct,
+  onDeleteProduct,
 }: ProductTableProps) {
   if (totalProducts === 0) {
     return (
@@ -58,16 +60,28 @@ function ProductTable({
               <td>{formatDate(product.createdAt)}</td>
               <td>{formatDate(product.updatedAt)}</td>
               <td>
-                <button
-                  type="button"
-                  className="icon-action"
-                  onClick={() => onEditProduct(product.id)}
-                  aria-label={`Editar ${product.name}`}
-                  title="Editar producto"
-                >
-                  <Pencil size={17} aria-hidden="true" />
-                  Editar
-                </button>
+                <div className="row-actions">
+                  <button
+                    type="button"
+                    className="icon-action"
+                    onClick={() => onEditProduct(product.id)}
+                    aria-label={`Editar ${product.name}`}
+                    title="Editar producto"
+                  >
+                    <Pencil size={17} aria-hidden="true" />
+                    Editar
+                  </button>
+                  <button
+                    type="button"
+                    className="icon-action danger-action"
+                    onClick={() => onDeleteProduct(product.id)}
+                    aria-label={`Eliminar ${product.name}`}
+                    title="Eliminar producto"
+                  >
+                    <Trash2 size={17} aria-hidden="true" />
+                    Eliminar
+                  </button>
+                </div>
               </td>
             </tr>
           ))}
