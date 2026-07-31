@@ -1,20 +1,39 @@
-import { PackagePlus } from 'lucide-react'
-import { useState, type FormEvent } from 'react'
-import type { ProductFormData, ProductFormErrors } from '../types/product'
+import { PackagePlus, Save, X } from 'lucide-react'
+import { useEffect, useState, type FormEvent } from 'react'
+import type {
+  Product,
+  ProductFormData,
+  ProductFormErrors,
+} from '../types/product'
 import {
   getEmptyProductForm,
+  productToFormData,
   validateProductForm,
 } from '../utils/productValidation'
 
 type ProductFormProps = {
-  onCreateProduct: (formData: ProductFormData) => void
+  editingProduct: Product | null
+  onSubmitProduct: (formData: ProductFormData) => void
+  onCancelEdit: () => void
 }
 
-function ProductForm({ onCreateProduct }: ProductFormProps) {
+function ProductForm({
+  editingProduct,
+  onSubmitProduct,
+  onCancelEdit,
+}: ProductFormProps) {
   const [formData, setFormData] = useState<ProductFormData>(
     getEmptyProductForm,
   )
   const [errors, setErrors] = useState<ProductFormErrors>({})
+  const isEditing = Boolean(editingProduct)
+
+  useEffect(() => {
+    setFormData(
+      editingProduct ? productToFormData(editingProduct) : getEmptyProductForm(),
+    )
+    setErrors({})
+  }, [editingProduct])
 
   function updateField(field: keyof ProductFormData, value: string) {
     setFormData((currentForm) => ({ ...currentForm, [field]: value }))
@@ -31,12 +50,25 @@ function ProductForm({ onCreateProduct }: ProductFormProps) {
       return
     }
 
-    onCreateProduct(formData)
-    setFormData(getEmptyProductForm())
+    onSubmitProduct(formData)
+
+    if (!isEditing) {
+      setFormData(getEmptyProductForm())
+    }
   }
 
   return (
     <form className="product-form" onSubmit={handleSubmit} noValidate>
+      {isEditing && (
+        <div className="edit-banner">
+          <span>Editando: {editingProduct?.name}</span>
+          <button type="button" className="ghost-action" onClick={onCancelEdit}>
+            <X size={16} aria-hidden="true" />
+            Cancelar
+          </button>
+        </div>
+      )}
+
       <div className="form-grid">
         <label>
           Nombre
@@ -101,8 +133,12 @@ function ProductForm({ onCreateProduct }: ProductFormProps) {
       </label>
 
       <button className="primary-action" type="submit">
-        <PackagePlus size={18} aria-hidden="true" />
-        Crear producto
+        {isEditing ? (
+          <Save size={18} aria-hidden="true" />
+        ) : (
+          <PackagePlus size={18} aria-hidden="true" />
+        )}
+        {isEditing ? 'Guardar cambios' : 'Crear producto'}
       </button>
     </form>
   )
